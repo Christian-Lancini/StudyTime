@@ -1,0 +1,206 @@
+/* darkmode (:root and .darkmode) */
+
+:root{
+    --bg-color: #f8fafc;
+    --color-text: #1e293b;
+    --utils-bg: #93ade7;
+    --text-muted: #64748b;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --clock: rgba(230, 226, 226, 0.678);
+    --task-color: #afc2eb;
+    --delete-task-hover: white;
+}
+
+.darkmode{
+    --bg-color: #0f172a;
+    --color-text: #f1f5f9;
+    --utils-bg: #1e293b ;
+    --text-muted: #94a3b8;
+    --accent-color: #60a5fa;
+    --accent-hover: #3b82f6;
+    --clock: rgba(175, 210, 255, 0.678);
+    --task-color: #334a6e;
+    --delete-task-hover: #263c70;
+}
+
+/* basic elements */
+
+body{
+    background-color: var(--bg-color);
+    color: var(--color-text);
+}
+
+button{
+    background-color: var(--accent-color);
+    color: var(--color-text);
+    border: 1px solid rgb(86, 80, 163);
+    border-radius: 90px;
+    height: 40px;
+    width: 100px;
+}
+
+button:hover{
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.utils{
+    background-color: var(--utils-bg);
+    border-radius: 10px;
+    height: 450px;
+}
+
+input{
+    width: 300px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* container */
+
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+
+/* nav section */
+
+nav {
+    grid-column: span 3 / span 3;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    border-bottom: 1px solid ;
+}
+
+nav h3{
+    font-size: 20px;
+}
+
+#clock_section{
+    text-align: center;
+    height: 60px;
+    width: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#clock{
+    font-size: 19px;
+}
+
+/* timer section */
+
+#timer_section {
+    grid-row: span 4 / span 4;
+    grid-row-start: 2;
+
+    text-align: center;
+}
+
+
+/* notes */
+
+#notes_section {
+    grid-row: span 4 / span 4;
+    grid-row-start: 2;
+    text-align: center;
+}
+
+#notepad{
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    resize: none;
+}
+
+#showNotes{
+    display: flex;
+    justify-content: start;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    gap: 15px;
+}
+
+#ListPages{
+    display: inline;
+}
+
+#ListPages a{
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+#ListPages a:hover{    
+    text-decoration: underline;  
+    cursor: pointer;
+}
+
+/* tasks */
+
+#ToDoList_section {
+    grid-row: span 4 / span 4;
+    grid-row-start: 2;
+    text-align: center;
+}
+
+
+.task{
+    text-align: center;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    align-items: center;
+    background-color: var(--task-color);
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.task button{
+    background-color: var(--task-color);
+    border: none;
+    transform: none;
+    height: 20px;
+    width: 30px;
+}
+
+.task button:hover{
+    transform: translateY(-1px);
+    color: var(--delete-task-hover);
+}
+
+.taskName{
+    margin: auto;
+}
+
+/* footer */
+
+footer button{
+    height: 30px;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+/* pages */
+
+#showPage h3{
+    margin: 20px;
+}
+
+#showPage p{
+    margin: 20px;
+}
+
+#showPage a:hover{
+    text-decoration: underline;
+}

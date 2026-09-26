@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Page Loaded</title>
+</head>
+<body>
+    <nav>
+        <h1>StudyTime</h1>
+        <div id="clock_section">
+            <div id="clockDiv"><p id="clock"></p></div>
+        <a href="../index.html"><button>Back</button></a>
+        </div>
+    </nav>  
+    <div id="showPage">
+        <h3>Pagina salvata | <a onclick="deletePage()">Delete</a></h3>
+        <p id="uploadPage"></p>
+    </div>
+
+
+</body>
+<script>
+    // get the item number
+    const url = window.location.search;
+    const i = new URLSearchParams(url).get('n');
+
+    const uploadPage = document.getElementById('uploadPage');
+    // get the item from localStorage
+    let page = localStorage.getItem(`page_${i}`);
+
+    uploadPage.innerText = page;
+
+    // darkmode 
+    let darkmode = localStorage.getItem('dark');
+
+    if (darkmode === "on"){
+            document.body.classList.add('darkmode');
+            localStorage.setItem('dark', 'on');
+    }
+
+
+    // delete function and rename next item scaled by one if there's another item
+    function deletePage(){
+        localStorage.removeItem(`page_${i}`);
+        if(localStorage.getItem(`page_${parseInt(i)+1}`) ){
+            for(let j = i; j < localStorage.length; j++){
+                let nextPage = localStorage.getItem(`page_${parseInt(j)+1}`);
+                localStorage.setItem(`page_${j}`, nextPage);
+                localStorage.removeItem(`page_${parseInt(j)+1}`);
+            }
+        }
+        window.location.href = '../index.html';
+    }
+
+</script>
+</html>

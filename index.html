@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <h1>StudyTime</h1>
+            <div id="clock_section">
+                <div id="clockDiv"><p id="clock"></p></div>
+            </div>
+        </nav>  
+
+        <div class="utils" id="timer_section">
+            <div id="timer-div">
+                <h2>Timer</h2>
+                <p id="timer"></p>
+                <button id="increase">+</button>
+                <button id="decrease">-</button>
+                <br>
+                <br>
+                <button id="start">Start</button>
+                <button id="resetTimer">Reset</button>
+            </div>
+        </div>
+
+        <div class="utils" id="ToDoList_section">
+            <div id="ToDoListDiv">
+                <h2>To-Do List</h2>
+                <input type="text" placeholder="Insert the name of the task..." id="nameTask">
+                <br>
+                <br>
+                <button id="addTask">Add</button>
+                <div id="showTasks"></div>
+            </div>
+        </div>
+
+        <div class="utils" id="notes_section">
+            <div id="notes">
+                <h2>Notepad</h2>
+                <textarea name="notepad" id="notepad"></textarea>
+                <br>
+                <br>
+                <button id="save">Save</button>
+                <button id="load">Load</button>
+                <div id="showNotes"></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <h3 id="salute"></h3>
+        <button id="themeBtn">Change Theme</button>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
